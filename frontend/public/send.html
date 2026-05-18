@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+    <link rel="stylesheet" href="./css/send.css">
+</head>
+<body>
+    
+<div class="transfer-container">
+
+  <h2>Send Money</h2>
+  <form id="transferform">
+  <!-- Account input -->
+  <div class="field">
+    <label>Receiver Account</label>
+    <input id="account" type="text" placeholder="Enter account number" />
+  </div>
+
+  <!-- Live result display (NOT input) -->
+  <div class="receiver-box">
+    <p class="label">Receiver</p>
+    <p id="receivername" class="receiver-name">—</p>
+  </div>
+
+  <!-- Amount -->
+  <div class="field">
+    <label>Amount</label>
+    <input id="amount" type="number" placeholder="Enter amount" />
+  </div>
+
+  <button id="submit" disabled>Send Money</button>
+
+</div>
+
+  <script src="./Js/send.js"></script>
+</body>
+</html>

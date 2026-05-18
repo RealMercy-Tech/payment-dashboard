@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Secure Access</title>
+    <!-- Modern Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icon integration if needed later -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <div class="login-container">
+        
+        <!-- Form Header Area -->
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Please enter your details to access your account</p>
+        </div>
+
+        <form id="loginForm">
+            <!-- Username Input -->
+            <div class="input-group">
+                <label for="user">Username</label>
+                <input type="text" id="user" placeholder="Enter your username" required autocomplete="username">
+            </div>
+          
+            <!-- Password Input -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required autocomplete="current-password">
+            </div>
+
+            <!-- Modern CTA Button -->
+            <button type="submit" class="login-btn">
+                <span>Sign In</span>
+            </button>
+
+            <!-- Dynamic error/success status text -->
+            <p id="message" class="status-message"></p>
+
+            <!-- Footer Redirection -->
+            <div class="form-footer">
+                <p>Don't have an account? <a href="signup.html">Create an account</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="./Js/login.js"></script>
+</body>
+</html>

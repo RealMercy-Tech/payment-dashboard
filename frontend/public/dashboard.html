@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Welcome back,  <span id="userdisplay"> !</span></h1>
+        <p class="subtitle">Here's your account overview today.</p>
+    </header>
+
+    <!-- Main Content Layout Grid -->
+    <main class="dashboard-grid">
+        
+        <!-- Left Column: Financial Summary -->
+        <section class="summary-section">
+            <div class="balance-card">
+                <div class="balance-info">
+                    <h2>Available Balance</h2>
+                    <!-- Placeholder text added so it looks good before JS loads -->
+                    <p id="balance" class="balance-amount">$24,500.00</p> 
+                </div>
+
+                <!-- Modernized Transfer Button -->
+                <a href="send.html" class="transfer-btn">
+                    <span>Transfer Money</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Right Column: Transactions -->
+        <section class="content-section">
+            <div class="transactions-card">
+                <h3>Transaction History</h3>
+                <div class="transactions-list" id="transactions">
+                    <!-- Dynamic transactions from your JS will inject here safely -->
+                    <!-- Mock transaction structure for your JS to emulate:
+                    <div class="transaction-item">
+                        <div class="tx-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div class="tx-details">
+                            <span class="tx-name">Shopping</span>
+                            <span class="tx-date">Today, 2:30 PM</span>
+                        </div>
+                        <span class="tx-amount negative">-$45.00</span>
+                    </div> 
+                    -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="./Js/dashoard.js"></script>
+</body>
+</html>

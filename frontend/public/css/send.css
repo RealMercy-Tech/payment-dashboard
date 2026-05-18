@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.transfer-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 60, 150, 0.08);
+  border: 1px solid #e8eefc;
+}
+
+/* Heading */
+.transfer-container h2 {
+  margin-bottom: 20px;
+  color: #1f3b82;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Input fields */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #2a3b5f;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7e2f5;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.25s ease;
+  background: #f9fbff;
+}
+
+.field input:focus {
+  border-color: #2f6bff;
+  box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
+  background: #ffffff;
+}
+
+/* Receiver box */
+.receiver-box {
+  background: #f3f7ff;
+  border: 1px solid #dce7ff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.receiver-box .label {
+  font-size: 12px;
+  color: #5b6b8c;
+  margin: 0;
+}
+
+.receiver-name {
+  margin: 4px 0 0;
+  font-weight: 600;
+  color: #1f3b82;
+  font-size: 16px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2f6bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  background: #1f55e0;
+}
+
+button:disabled {
+  background: #a9bce6;
+  cursor: not-allowed;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .transfer-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .transfer-container h2 {
+    font-size: 20px;
+  }
+}

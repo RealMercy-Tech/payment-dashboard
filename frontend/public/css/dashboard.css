@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Modern CSS Reset & Variables
+   ========================================================================== */
+:root {
+    --bg-primary: #f4f7fc;
+    --surface-white: #ffffff;
+    --brand-blue: #2563eb;
+    --brand-blue-hover: #1d4ed8;
+    --brand-blue-light: #eff6ff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   Dashboard Layout Structure
+   ========================================================================== */
+.dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header */
+.main-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.main-header .subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Responsive Responsive Layout Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* ==========================================================================
+   Balance Card Style (Modern Electric Blue Accent)
+   ========================================================================== */
+.balance-card {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #1e40af 100%);
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative glass circle in card background */
+.balance-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 130px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.balance-info h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+}
+
+.balance-amount {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+/* "Transfer Money" Modern CTA Button */
+.transfer-btn {
+    background-color: var(--surface-white);
+    color: var(--brand-blue);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.transfer-btn:hover {
+    background-color: var(--brand-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.transfer-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Transactions Area
+   ========================================================================== */
+.transactions-card {
+    background-color: var(--surface-white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.transactions-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Base style for individual items generated dynamically via JavaScript */
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   Responsive Viewports (Desktop Optimization)
+   ========================================================================== */
+@media (min-width: 768px) {
+    body {
+        padding: 4rem 2rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 4fr 6fr; /* Split side-by-side layout */
+        gap: 2rem;
+    }
+
+    .balance-card {
+        min-height: 280px; /* Gives nice breathing room on desktop */
+    }
+}

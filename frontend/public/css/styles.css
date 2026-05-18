@@ -1,0 +1,188 @@
+  /* ==========================================================================
+   Design System Variables & Clean Reset
+   ========================================================================== */
+:root {
+    --bg-gradient: linear-gradient(135deg, #f4f7fc 0%, #e2e8f0 100%);
+    --surface-card: #ffffff;
+    --brand-blue: #2563eb;
+    --brand-blue-hover: #1d4ed8;
+    --brand-blue-focus: rgba(37, 99, 235, 0.15);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --border-focus: #3b82f6;
+    --shadow-card: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+/* Container Centering Framework */
+.login-wrapper {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Card Styling
+   ========================================================================== */
+.login-container {
+    background-color: var(--surface-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+}
+
+/* ==========================================================================
+   Input Form Elements
+   ========================================================================== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-main);
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+/* Input Interactive States */
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 4px var(--brand-blue-focus);
+}
+
+/* ==========================================================================
+   Primary Action Button
+   ========================================================================== */
+.login-btn {
+    width: 100%;
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.975rem;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn:hover {
+    background-color: var(--brand-blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Form Feedback Messages & Redirection links
+   ========================================================================== */
+.status-message {
+    font-size: 0.875rem;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.25rem;
+    font-weight: 500;
+}
+
+/* Classes to toggle globally via javascript when handling login validation response */
+.status-message.error { color: #ef4444; }
+.status-message.success { color: #22c55e; }
+
+.form-footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-footer a {
+    color: var(--brand-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+.form-footer a:hover {
+    color: var(--brand-blue-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Mobile Optimization
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .login-container {
+        padding: 2rem 1.25rem;
+    }
+}
