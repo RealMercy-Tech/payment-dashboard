@@ -1,4 +1,3 @@
-https://github.com/RealMercy-Tech/payment-dashboard.git
 
 
 # Demo Payment Dashboard
