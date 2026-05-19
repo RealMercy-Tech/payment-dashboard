@@ -1,114 +1,165 @@
-body {
+/* --- Variables for a Premium Blue & White Palette --- */
+:root {
+  --primary-blue: #0052cc;         /* Vivid brand blue */
+  --hover-blue: #0043a4;           /* Darker blue for interactions */
+  --disabled-blue: #b3d1ff;        /* Soft blue for the disabled button state */
+  --light-blue-bg: #f4f8fe;        /* Ultra-light blue tint for page background */
+  --card-bg: #ffffff;              /* Pure white for the card container */
+  --border-blue: #e1e9f6;          /* Muted blue-grey for clean boundaries */
+  --text-main: #0c2340;            /* Deep navy blue for dominant readability */
+  --text-muted: #627d98;           /* Mid-tone blue-grey for secondary text/labels */
+}
+
+/* --- Global Setup & Reset --- */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f8ff;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--light-blue-bg);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 16px;
 }
 
-/* Main container */
+/* --- Transfer Container Card --- */
 .transfer-container {
-  background: #ffffff;
+  background-color: var(--card-bg);
   width: 100%;
-  max-width: 420px;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 60, 150, 0.08);
-  border: 1px solid #e8eefc;
+  max-width: 440px; /* Perfect desktop width, drops down automatically on mobile */
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(0, 82, 204, 0.06);
+  border: 1px solid var(--border-blue);
 }
 
-/* Heading */
 .transfer-container h2 {
-  margin-bottom: 20px;
-  color: #1f3b82;
-  font-size: 22px;
+  color: var(--text-main);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 28px;
   text-align: center;
 }
 
-/* Input fields */
+/* --- Form Fields (Labels & Inputs) --- */
 .field {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .field label {
   display: block;
-  margin-bottom: 6px;
   font-size: 14px;
-  color: #2a3b5f;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
 }
 
 .field input {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #d7e2f5;
-  border-radius: 10px;
+  padding: 14px 16px;
   font-size: 15px;
-  outline: none;
-  transition: 0.25s ease;
-  background: #f9fbff;
-}
-
-.field input:focus {
-  border-color: #2f6bff;
-  box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
-  background: #ffffff;
-}
-
-/* Receiver box */
-.receiver-box {
-  background: #f3f7ff;
-  border: 1px solid #dce7ff;
-  padding: 12px 14px;
+  border: 1.5px solid var(--border-blue);
   border-radius: 10px;
-  margin-bottom: 18px;
+  color: var(--text-main);
+  background-color: var(--card-bg);
+  outline: none;
+  transition: all 0.2s ease-in-out;
 }
 
-.receiver-box .label {
-  font-size: 12px;
-  color: #5b6b8c;
+/* Input Focus States */
+.field input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
+}
+
+/* Webkit spin-button removal for cleaner number inputs */
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
 }
 
-.receiver-name {
-  margin: 4px 0 0;
-  font-weight: 600;
-  color: #1f3b82;
-  font-size: 16px;
+::placeholder {
+  color: #a0aec0;
 }
 
-/* Button */
-button {
+/* --- Live Dynamic Receiver Display Box --- */
+.receiver-box {
+  background-color: var(--light-blue-bg);
+  border: 1px dashed var(--primary-blue);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.receiver-box .label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.receiver-box .receiver-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+/* --- Action Button States --- */
+#submit {
   width: 100%;
-  padding: 12px;
-  background: #2f6bff;
-  color: white;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
   border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: all 0.2s ease;
 }
 
-button:hover {
-  background: #1f55e0;
+/* Enabled State (Active Blue) */
+#submit:not([disabled]) {
+  background-color: var(--primary-blue);
+  color: var(--card-bg);
+  box-shadow: 0 4px 12px rgba(0, 82, 204, 0.2);
 }
 
-button:disabled {
-  background: #a9bce6;
+#submit:not([disabled]):hover {
+  background-color: var(--hover-blue);
+}
+
+#submit:not([disabled]):active {
+  transform: scale(0.98);
+}
+
+/* Disabled State (Waiting for Validation via send.js) */
+#submit[disabled] {
+  background-color: var(--disabled-blue);
+  color: var(--card-bg);
   cursor: not-allowed;
+  opacity: 0.8;
 }
 
-/* Responsive tweaks */
-@media (max-width: 480px) {
+/* --- Responsive Adaptations --- */
+@media (max-width: 400px) {
   .transfer-container {
-    margin: 20px;
-    padding: 20px;
+    padding: 24px 16px;
+    box-shadow: none; /* Flattening on tiny screens keeps it super clean */
+    border: none;
+    background: transparent;
   }
-
-  .transfer-container h2 {
-    font-size: 20px;
+  
+  body {
+    background-color: var(--card-bg); /* Switch background on mobile for native app feel */
+    align-items: flex-start;
   }
 }

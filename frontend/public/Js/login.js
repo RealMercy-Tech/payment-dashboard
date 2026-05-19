@@ -11,7 +11,7 @@ const API_URL = "https://payment-dashboard-backend-cke4.onrender.com";
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const username = document.getElementById('user').value;
+    const username = document.getElementById('user').value.trim().toLowerCase();
     const password = document.getElementById('password').value;
 
  try{
