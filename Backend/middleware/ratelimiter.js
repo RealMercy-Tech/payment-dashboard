@@ -2,7 +2,7 @@ import ratelimite from "express-rate-limit";
 
 export  const authLimiter = ratelimite({
     windowMs: 15 * 60 * 1000, // 15 mins 
-    max: 5, // 5 request per IP
+    max: 10, // 5 request per IP
     standardHeaders: true,
     legacyHeaders: false,
     message: {
