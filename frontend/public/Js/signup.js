@@ -1,7 +1,7 @@
 
 const loginForm = document.getElementById('form');
 
-
+const API_URL = "https://payment-dashboard-backend-cke4.onrender.com";
 
 // loginButton.addEventListener("click", () => {
 //  alert("click successfull")
@@ -16,9 +16,9 @@ loginForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
   const message = document.getElementById("message");
 
-  console.log( JSON.stringify({username, email, phonenum, password}))
+  //console.log( JSON.stringify({username, email, phonenum, password}))
 try{
-    const res = await fetch('http://localhost:3000/api/auth/signup', {
+    const res = await fetch(`${API_URL}/api/auth/signup`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,11 +26,11 @@ try{
         body: JSON.stringify({username, email, phonenum, password})
     });
 
-    console.log(res)
+   console.log(res)
    
     
   const data = await res.json();
- console.log(data)
+ //console.log(data)
 
   if(res.ok){
     message.style.color = 'green';

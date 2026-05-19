@@ -6,6 +6,7 @@ const message = document.getElementById('message');
 // login.addEventListener("click", () => {
  // alert("login successfull")
 //})
+const API_URL = "https://payment-dashboard-backend-cke4.onrender.com";
 
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -14,7 +15,7 @@ loginForm.addEventListener("submit", async (e) => {
     const password = document.getElementById('password').value;
 
  try{
-    const res = await fetch('http://localhost:3000/api/auth/login', {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

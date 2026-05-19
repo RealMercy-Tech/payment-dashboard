@@ -2,12 +2,13 @@ const username = document.getElementById("userdisplay");
 const balance = document.getElementById("balance");
 
 const token = localStorage.getItem("token");
+const API_URL = "https://payment-dashboard-backend-cke4.onrender.com";
 
 
 async function loadDashboard() {
 try{
 
-    const res = await fetch('http://localhost:3000/api/transfer/dashboard', {
+    const res = await fetch(`${API_URL}/api/transfer/dashboard`, {
         method: "GET",
         headers: {
         'Content-Type': 'application/json',
@@ -52,7 +53,7 @@ loadDashboard();
 
 
   try {
-    const response = await fetch('http://localhost:3000/api/transfer/history', {
+    const response = await fetch(`${API_URL}/api/transfer/history`, {
        method: "GET",
         headers: {
         'Content-Type': 'application/json',

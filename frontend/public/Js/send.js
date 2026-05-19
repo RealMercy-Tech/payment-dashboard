@@ -3,7 +3,7 @@ const receiverName = document.getElementById("receivername");
 const form = document.getElementById("transferform");
 const sendBnt = document.getElementById("submit");
    
-
+const API_URL = "https://payment-dashboard-backend-cke4.onrender.com";
 let timeout;
 let isValidUser = false;
 
@@ -29,7 +29,7 @@ async function checkUser () {
 
     try{
 
-         const res = await fetch('http://localhost:3000/api/transfer/user',{
+         const res = await fetch(`${API_URL}/api/transfer/user`,{
            method: "POST",
         headers: {
         'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ accountInputEl.addEventListener("input", () => {
 
  try{
 
-   const res = await fetch('http://localhost:3000/api/transfer/transfer', {
+   const res = await fetch(`${API_URL}/api/transfer/transfer`, {
        method: "POST",
         headers: {
         'Content-Type': 'application/json',

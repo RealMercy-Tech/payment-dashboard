@@ -13,7 +13,10 @@ const port = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://payment-dashboard-three.vercel.app",
+    credentials: true,
+}));
 app.use(express.static("public"));
 
 
